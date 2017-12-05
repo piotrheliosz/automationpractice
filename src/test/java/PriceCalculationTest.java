@@ -13,7 +13,7 @@ public class PriceCalculationTest extends Scenario {
         myAccountPage.womenSectionLink.click();
 
         WomenCategoryPage womenCategoryPage = new WomenCategoryPage(driver);
-        womenCategoryPage.findClotheElementByTitle("Printed Summer Dress").click();
+        womenCategoryPage.findElementByTitle("Printed Summer Dress").click();
 
         ProductPage productPage = new ProductPage(driver);
         double outPrice = productPage.getOurPrice();

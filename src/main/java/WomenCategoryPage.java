@@ -8,7 +8,7 @@ public class WomenCategoryPage extends Page {
     }
 
 
-    public WebElement findClotheElementByTitle(String clotheTitle) {
+    public WebElement findElementByTitle(String clotheTitle) {
         return driver.findElement(By.xpath("//*[@id='center_column']/ul/li//a[@class='product-name' and @title='" + clotheTitle + "']"));
     }
 }

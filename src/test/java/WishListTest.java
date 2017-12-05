@@ -11,12 +11,12 @@ public class WishListTest extends Scenario {
         myAccountPage.womenSectionLink.click();
 
         WomenCategoryPage womenCategoryPage = new WomenCategoryPage(driver);
-        womenCategoryPage.findClotheElementByTitle("Printed Chiffon Dress").click();
+        womenCategoryPage.findElementByTitle("Printed Chiffon Dress").click();
 
         ProductPage productPage = new ProductPage(driver);
         productPage.wishlistButton.click();
 
-        productPage.waitForElementVsibility(productPage.addedToWishListStatement);
+        productPage.waitForElementVisibility(productPage.addedToWishListStatement);
         assertTrue(productPage.addedToWishListStatement.isDisplayed());
 
         productPage.closeStatementLink.click();

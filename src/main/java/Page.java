@@ -23,10 +23,16 @@ public class Page {
         PageFactory.initElements(driver, this);
     }
 
-    public void waitForElementVsibility(WebElement element) {
+    public void waitForElementVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.pollingEvery(200, TimeUnit.MICROSECONDS)
                 .ignoring(NoSuchElementException.class)
                 .until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitForElementInvisibility(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.pollingEvery(200, TimeUnit.MICROSECONDS)
+                .until(ExpectedConditions.invisibilityOf(element));
     }
 }

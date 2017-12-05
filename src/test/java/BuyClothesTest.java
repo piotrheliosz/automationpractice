@@ -11,11 +11,11 @@ public class BuyClothesTest extends Scenario {
         myAccountPage.womenSectionLink.click();
 
         WomenCategoryPage womenCategoryPage = new WomenCategoryPage(driver);
-        womenCategoryPage.findClotheElementByTitle("Printed Chiffon Dress").click();
+        womenCategoryPage.findElementByTitle("Printed Chiffon Dress").click();
 
         ProductPage productPage = new ProductPage(driver);
         productPage.exclusiveButton.click();
-        productPage.waitForElementVsibility(productPage.layerCard);
+        productPage.waitForElementVisibility(productPage.layerCard);
 
         LayerPage layerPage = new LayerPage(driver);
         layerPage.processToCheckOutButton.click();

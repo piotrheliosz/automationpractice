@@ -36,9 +36,20 @@ public class ProductPage extends Page {
     @FindBy(id = "reduction_percent_display")
     public WebElement reductionPercent;
 
-    @FindBy(xpath = "//*[@id='layer_cart']//h2/i")
-    public WebElement successIcon;
+    @FindBy(id = "new_comment_tab_btn")
+    public WebElement newCommentLink;
 
+    @FindBy(id = "comment_title")
+    public WebElement commentTitleInput;
+
+    @FindBy(id = "content")
+    public WebElement commentTextArea;
+
+    @FindBy(xpath = "//*[@id='product']//p[text()='Your comment has been added and will be available once approved by a moderator']")
+    public WebElement commentStatement;
+
+    @FindBy(id = "submitNewMessage")
+    public WebElement sendNewComment;
 
     public void setSize(String size) {
         Select select = new Select(selectSize);

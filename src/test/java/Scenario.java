@@ -14,8 +14,8 @@ public class Scenario {
         System.setProperty("webdriver.chrome.driver", "C:\\workspace\\automationpractice\\chromedriver.exe");
         System.setProperty( "webdriver.firefox.marionette", "C:\\workspace\\automationpractice\\geckodriver.exe" );
 
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver(); //ver 48.0b2
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver(); //ver 48.0b2
 
         driver.manage().window().maximize();
         driver.get("http://automationpractice.com");
