@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class BuyClothes extends Scenario {
+public class BuyClothesTest extends Scenario {
 
     @Test
     public void womenTshirtShouldBeBought() {

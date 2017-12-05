@@ -12,6 +12,9 @@ public class Page {
 
     static WebDriver driver;
 
+    @FindBy(id = "search_query_top")
+    public WebElement topSearchField;
+
     @FindBy(xpath = "//button[@class='exclusive']")
     public WebElement exclusiveButton;
 
