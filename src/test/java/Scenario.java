@@ -30,7 +30,7 @@ public class Scenario {
 
     @After
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
 
 }
