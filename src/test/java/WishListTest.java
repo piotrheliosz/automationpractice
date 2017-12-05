@@ -19,6 +19,7 @@ public class WishListTest extends Scenario {
         productPage.waitForElementVisibility(productPage.addedToWishListStatement);
         assertTrue(productPage.addedToWishListStatement.isDisplayed());
 
+        productPage.waitForElementVisibility(productPage.closeStatementLink);
         productPage.closeStatementLink.click();
 
 
