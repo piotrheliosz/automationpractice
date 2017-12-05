@@ -16,6 +16,7 @@ public class WishListTest extends Scenario {
         ProductPage productPage = new ProductPage(driver);
         productPage.wishlistButton.click();
 
+        productPage.waitForElementVsibility(productPage.addedToWishListStatement);
         assertTrue(productPage.addedToWishListStatement.isDisplayed());
 
         productPage.closeStatementLink.click();
