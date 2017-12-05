@@ -16,19 +16,12 @@ public class PriceCalculationTest extends Scenario {
         womenCategoryPage.findElementByTitle("Printed Summer Dress").click();
 
         ProductPage productPage = new ProductPage(driver);
-        double outPrice = productPage.getOurPrice();
-        double oldPrice = productPage.getOldPrice();
-        double reductionPercent = productPage.getReductionPercent();
+        double ourPrice = productPage.getOurPrice() * 100;
+        double oldPrice = productPage.getOldPrice() * 100;
+        double reductionPercent = productPage.getReductionPercent() * 100;
+        double reduction = (oldPrice * reductionPercent)/100;
 
-        System.out.println("outPrice: " + outPrice + " oldPrice: " + oldPrice + " reductionPercent: " + reductionPercent);
-
-        DecimalFormat decimalFormat = new DecimalFormat("#,##");
-        double reduction = (oldPrice * reductionPercent);
-        reduction = Double.valueOf(decimalFormat.format(reduction));
-        System.out.println("reduction: " + reduction);
-
-        //TODO fix double reduction round
-        assertEquals(outPrice, (oldPrice - reduction));
+        assertEquals(ourPrice, (oldPrice - Math.round(reduction)));
 
     }
 }
