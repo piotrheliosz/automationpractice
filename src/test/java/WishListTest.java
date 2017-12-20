@@ -1,14 +1,14 @@
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class WishListTest extends Scenario {
 
     @Test
-    public void productShouldBeAddedToWishList(){
+    public void productShouldBeAddedToWishList() {
 
         MyAccountPage myAccountPage = new MyAccountPage(driver);
-        myAccountPage.womenSectionLink.click();
+        myAccountPage.goToMyAccountSection("Women");
 
         WomenCategoryPage womenCategoryPage = new WomenCategoryPage(driver);
         womenCategoryPage.findElementByTitle("Printed Chiffon Dress").click();

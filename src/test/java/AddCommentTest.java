@@ -1,11 +1,11 @@
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class AddCommentTest extends Scenario {
 
     @Test
-    public void commentShouldBeAdded(){
+    public void commentShouldBeAdded() {
 
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         myAccountPage.womenSectionLink.click();

@@ -9,17 +9,17 @@ public class LoginPage extends Page {
     }
 
     @FindBy(linkText = "Sign in")
-    public WebElement singInLink;
+    WebElement singInLink;
 
-    public void sendEmail(String email) {
+    void sendEmail(String email) {
         driver.findElement(By.id("email")).sendKeys(email);
     }
 
-    public void sendPassword(String password) {
+    void sendPassword(String password) {
         driver.findElement(By.id("passwd")).sendKeys(password);
     }
 
-    public void singIn() {
+    void singIn() {
         driver.findElement(By.id("SubmitLogin")).click();
     }
 }

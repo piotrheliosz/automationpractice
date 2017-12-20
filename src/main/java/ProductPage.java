@@ -1,71 +1,60 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class ProductPage extends Page {
-    public ProductPage(WebDriver driver) {
+    ProductPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(id = "layer_cart")
-    public WebElement layerCard;
-
-    @FindBy(id = "quantity_wanted")
-    public WebElement quantityInput;
+    WebElement layerCard;
 
     @FindBy(id = "group_1")
-    public WebElement selectSize;
+    WebElement selectSize;
 
     @FindBy(id = "wishlist_button")
-    public WebElement wishlistButton;
+    WebElement wishlistButton;
 
     @FindBy(xpath = "//*[@id='product']//p[text()='Added to your wishlist.']")
-    public WebElement addedToWishListStatement;
+    WebElement addedToWishListStatement;
 
     @FindBy(xpath = "//*[@id='product']//a[@title='Close']")
-    public WebElement closeStatementLink;
-
-    @FindBy(id = "our_price_display")
-    public WebElement ourPrice;
-
-    @FindBy(id = "old_price_display")
-    public WebElement oldPrice;
-
-    @FindBy(id = "reduction_percent_display")
-    public WebElement reductionPercent;
+    WebElement closeStatementLink;
 
     @FindBy(id = "new_comment_tab_btn")
-    public WebElement newCommentLink;
+    WebElement newCommentLink;
 
     @FindBy(id = "comment_title")
-    public WebElement commentTitleInput;
+    WebElement commentTitleInput;
 
     @FindBy(id = "content")
-    public WebElement commentTextArea;
+    WebElement commentTextArea;
 
     @FindBy(xpath = "//*[@id='product']//p[text()='Your comment has been added and will be available once approved by a moderator']")
-    public WebElement commentStatement;
+    WebElement commentStatement;
 
     @FindBy(id = "submitNewMessage")
-    public WebElement sendNewComment;
+    WebElement sendNewComment;
 
-    public void setSize(String size) {
-        Select select = new Select(selectSize);
-        select.selectByVisibleText(size);
+    @FindBy(id = "our_price_display")
+    private WebElement ourPriceDisplay;
+
+    @FindBy(id = "old_price_display")
+    private WebElement oldPriceDisplay;
+
+    @FindBy(id = "reduction_percent_display")
+    private WebElement reductionPercentDisplay;
+
+    double getOurPriceDisplay() {
+        return Math.round((Double.parseDouble(ourPriceDisplay.getText().replaceAll("\\W", "")) / 100) * 100);
     }
 
-    public double getOurPrice() {
-        return Double.parseDouble(ourPrice.getText().replaceAll("\\W", ""))/100;
+    double getOldPriceDisplay() {
+        return (Double.parseDouble(oldPriceDisplay.getText().replaceAll("\\W", "")) / 100) * 100;
     }
 
-
-    public double getOldPrice() {
-        return Double.parseDouble(oldPrice.getText().replaceAll("\\W", ""))/100;
-    }
-
-    public double getReductionPercent() {
-        return Double.parseDouble(reductionPercent.getText().replaceAll("\\W", ""))/100;
+    double getReductionPercentDisplay() {
+        return Double.parseDouble(reductionPercentDisplay.getText().replaceAll("\\W", "")) / 100;
     }
 }

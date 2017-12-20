@@ -9,10 +9,10 @@ public class MyAccountPage extends Page {
     }
 
     @FindBy(xpath = "//*[@id='block_top_menu']//li/a[@title='Women']")
-    public WebElement womenSectionLink;
+    WebElement womenSectionLink;
 
     public void goToMyAccountSection(String sectionText) {
-        driver.findElement(By.xpath("//*[@id='center_column']//span[text()='" + sectionText + "']")).click();
+        driver.findElement(By.xpath("//*[@id='header'or @id='columns']//*[text()='" + sectionText + "']")).click();
     }
 
 }

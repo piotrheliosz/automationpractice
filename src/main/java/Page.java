@@ -12,25 +12,22 @@ public class Page {
 
     static WebDriver driver;
 
-    @FindBy(id = "search_query_top")
-    public WebElement topSearchField;
-
-    @FindBy(xpath = "//button[@class='exclusive']")
-    public WebElement exclusiveButton;
-
-    public Page(WebDriver driver) {
+    Page(WebDriver driver) {
         Page.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void waitForElementVisibility(WebElement element) {
+    @FindBy(xpath = "//button[@class='exclusive']")
+    WebElement exclusiveButton;
+
+    void waitForElementVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.pollingEvery(200, TimeUnit.MICROSECONDS)
                 .ignoring(NoSuchElementException.class)
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForElementInvisibility(WebElement element) {
+    void waitForElementInvisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.pollingEvery(200, TimeUnit.MICROSECONDS)
                 .until(ExpectedConditions.invisibilityOf(element));
