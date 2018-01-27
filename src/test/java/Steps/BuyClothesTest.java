@@ -1,3 +1,6 @@
+package Steps;
+
+import PageObjectPattern.*;
 import org.testng.annotations.Test;
 
 import static junit.framework.TestCase.assertTrue;

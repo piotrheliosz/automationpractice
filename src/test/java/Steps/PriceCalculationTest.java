@@ -1,3 +1,8 @@
+package Steps;
+
+import PageObjectPattern.MyAccountPage;
+import PageObjectPattern.ProductPage;
+import PageObjectPattern.WomenCategoryPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

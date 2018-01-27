@@ -1,3 +1,7 @@
+package Steps;
+
+import PageObjectPattern.MyAccountPage;
+import PageObjectPattern.MyAddressesPage;
 import org.testng.annotations.Test;
 
 import static junit.framework.TestCase.assertEquals;

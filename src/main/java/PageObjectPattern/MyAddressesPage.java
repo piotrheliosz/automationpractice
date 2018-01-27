@@ -1,3 +1,5 @@
+package PageObjectPattern;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,7 @@ public class MyAddressesPage extends Page {
     }
 
     @FindBy(id = "submitAddress")
+    public
     WebElement saveButton;
 
     @FindBy(xpath = "//*[@id='center_column']//a[@title='Add an address']")
@@ -46,7 +49,7 @@ public class MyAddressesPage extends Page {
         select.selectByVisibleText(country);
     }
 
-    void fillAllFieldsOfMyNewAddress() {
+    public void fillAllFieldsOfMyNewAddress() {
         addNewAddressButton.click();
         firstNameInput.sendKeys("firstName");
         lastNameInput.sendKeys("lastName");
@@ -59,7 +62,7 @@ public class MyAddressesPage extends Page {
         myAddressInput.sendKeys(UUID.randomUUID().toString().replaceAll("-", ""));
     }
 
-    int getNumberOfAddedAddresses() {
+    public int getNumberOfAddedAddresses() {
         return driver.findElements(By.xpath("//*[@id='center_column']//div[@class='col-xs-12 col-sm-6 address']")).size();
     }
 

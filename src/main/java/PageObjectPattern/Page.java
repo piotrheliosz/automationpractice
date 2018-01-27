@@ -1,3 +1,5 @@
+package PageObjectPattern;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,16 +20,17 @@ public class Page {
     }
 
     @FindBy(xpath = "//button[@class='exclusive']")
+    public
     WebElement exclusiveButton;
 
-    void waitForElementVisibility(WebElement element) {
+    public void waitForElementVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.pollingEvery(200, TimeUnit.MICROSECONDS)
                 .ignoring(NoSuchElementException.class)
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    void waitForElementInvisibility(WebElement element) {
+    public void waitForElementInvisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.pollingEvery(200, TimeUnit.MICROSECONDS)
                 .until(ExpectedConditions.invisibilityOf(element));

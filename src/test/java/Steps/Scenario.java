@@ -1,7 +1,8 @@
-import org.junit.After;
-import org.junit.Before;
+package Steps;
+
+import PageObjectPattern.LoginPage;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
@@ -18,6 +19,7 @@ public class Scenario {
         //driver = new ChromeDriver();
         driver = new FirefoxDriver(); //ver 48.0b2
 
+        driver.manage().window().setPosition( new Point( 1920, 1 ) );
         driver.manage().window().maximize();
         driver.get("http://automationpractice.com");
 
