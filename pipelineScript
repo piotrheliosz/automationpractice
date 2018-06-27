@@ -1,0 +1,4 @@
+node {
+  stage 'Run JMeter Test'
+  sh 'C:/apache-jmeter-4.0/bin/jmeter.sh -n -t C:/workspace/KissJmeterTests/master_test.jmx -l test.jtl'
+}
